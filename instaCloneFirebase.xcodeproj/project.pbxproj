@@ -15,6 +15,9 @@
 		F0DB54F6291A6F1000572143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0DB54F5291A6F1000572143 /* Assets.xcassets */; };
 		F0DB54F9291A6F1000572143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0DB54F7291A6F1000572143 /* LaunchScreen.storyboard */; };
 		F0DB5501291A73E000572143 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0DB5500291A73E000572143 /* GoogleService-Info.plist */; };
+		F0E24B9F291A9AC100476E27 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E24B9E291A9AC100476E27 /* FeedViewController.swift */; };
+		F0E24BA1291A9AD000476E27 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E24BA0291A9AD000476E27 /* SettingsViewController.swift */; };
+		F0E24BA3291A9ADD00476E27 /* SendPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E24BA2291A9ADD00476E27 /* SendPostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		F0DB54F8291A6F1000572143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0DB54FA291A6F1000572143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0DB5500291A73E000572143 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F0E24B9E291A9AC100476E27 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		F0E24BA0291A9AD000476E27 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F0E24BA2291A9ADD00476E27 /* SendPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,9 @@
 				F0DB54F7291A6F1000572143 /* LaunchScreen.storyboard */,
 				F0DB5500291A73E000572143 /* GoogleService-Info.plist */,
 				F0DB54FA291A6F1000572143 /* Info.plist */,
+				F0E24B9E291A9AC100476E27 /* FeedViewController.swift */,
+				F0E24BA0291A9AD000476E27 /* SettingsViewController.swift */,
+				F0E24BA2291A9ADD00476E27 /* SendPostViewController.swift */,
 			);
 			path = instaCloneFirebase;
 			sourceTree = "<group>";
@@ -91,7 +100,6 @@
 				04431BA5A86DEEE42AA6C645 /* Pods-instaCloneFirebase.debug.xcconfig */,
 				138BAF2510F4AADE9AC46008 /* Pods-instaCloneFirebase.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,6 +221,9 @@
 			files = (
 				F0DB54F1291A6F0D00572143 /* ViewController.swift in Sources */,
 				F0DB54ED291A6F0D00572143 /* AppDelegate.swift in Sources */,
+				F0E24BA3291A9ADD00476E27 /* SendPostViewController.swift in Sources */,
+				F0E24B9F291A9AC100476E27 /* FeedViewController.swift in Sources */,
+				F0E24BA1291A9AD000476E27 /* SettingsViewController.swift in Sources */,
 				F0DB54EF291A6F0D00572143 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
