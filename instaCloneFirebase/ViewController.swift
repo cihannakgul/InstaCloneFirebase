@@ -16,10 +16,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        SessionControl()
+    }
+    
+    func SessionControl(){
+        
+        let currentUser = Auth.auth().currentUser
+        if currentUser != nil{
+            performSegue(withIdentifier: "toFeedVC", sender: nil)
+        }
     }
     
     
-    @IBAction func SignUpClicked(_ sender: Any) {
+    @IBAction func SignUpClicked(_ sender: Any) { // Kaydol
         if txtEmail.text != "" && txtPassword.text != ""{
             
        
@@ -27,10 +36,12 @@ class ViewController: UIViewController {
             Auth.auth().createUser(withEmail: txtEmail.text!, password: txtPassword.text!) { authdata, error in
                 
                 if error != nil{
-                    let errorNew = error?.localizedDescription as! String
-                    self.CreateMessage(Message: errorNew)
+                   
+                    self.CreateMessage(Message: error?.localizedDescription ?? "Error")
                 }else{
                     
+                 
+                   // self.CreateMessage(Message: "You have successfully registered \(authdata?.user)")
                     self.performSegue(withIdentifier: "toFeedVC", sender: nil)
                 }
             }
@@ -44,14 +55,30 @@ class ViewController: UIViewController {
     
     
     
-    @IBAction func SignInClicked(_ sender: Any) {
+    @IBAction func SignInClicked(_ sender: Any) { // Giriş yap
         
-       
+        if txtEmail.text != "" && txtPassword.text != ""{
+            Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) { authdata, error in
+                if error != nil{
+                     
+                    self.CreateMessage(Message: error?.localizedDescription ?? "Error")
+                }else{
+                   // self.CreateMessage(Message: "Welcome \(authdata?.user) have a nice day!" )
+                    self.performSegue(withIdentifier: "toFeedVC", sender: nil)
+                }
+                
+            }
+            
+        }
+        else{
+            
+            CreateMessage(Message: "Please fill the textfields...")
+        }
        
     }
     
     func CreateMessage(Message:String){
-        let alert = UIAlertController(title: Message, message: "Hey!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Hey!!", message: Message, preferredStyle: .alert)
         let okButton = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okButton)
         self.present(alert, animated: true)
