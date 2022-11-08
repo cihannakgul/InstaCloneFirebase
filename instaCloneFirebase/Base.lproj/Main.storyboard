@@ -11,7 +11,7 @@
         <!--Send Post-->
         <scene sceneID="PRl-rO-BTv">
             <objects>
-                <viewController id="KnD-N5-pmh" sceneMemberID="viewController">
+                <viewController id="KnD-N5-pmh" customClass="SendPostViewController" customModule="instaCloneFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zl0-JM-bBa">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,23 +27,42 @@
         <!--Settings-->
         <scene sceneID="y02-cU-mfC">
             <objects>
-                <viewController id="ALi-ZP-CVQ" sceneMemberID="viewController">
+                <viewController id="ALi-ZP-CVQ" customClass="SettingsViewController" customModule="instaCloneFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3W4-I2-rUs">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zuc-j9-1Ex">
+                                <rect key="frame" x="133" y="362" width="125" height="69"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <connections>
+                                    <action selector="LogoutClicked:" destination="ALi-ZP-CVQ" eventType="touchUpInside" id="GbR-LW-kgP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vRm-eq-SGd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zuc-j9-1Ex" firstAttribute="leading" secondItem="vRm-eq-SGd" secondAttribute="leading" constant="133" id="CRO-Em-jNL"/>
+                            <constraint firstItem="Zuc-j9-1Ex" firstAttribute="top" secondItem="vRm-eq-SGd" secondAttribute="top" constant="315" id="IzU-OA-nY7"/>
+                            <constraint firstItem="Zuc-j9-1Ex" firstAttribute="centerX" secondItem="3W4-I2-rUs" secondAttribute="centerX" id="aJe-tm-FoJ"/>
+                            <constraint firstItem="vRm-eq-SGd" firstAttribute="bottom" secondItem="Zuc-j9-1Ex" secondAttribute="bottom" constant="330" id="w0F-07-uRK"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="person.circle" catalog="system" id="kBv-ox-TnJ"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="logout" modalPresentationStyle="fullScreen" id="Xoi-P1-E7e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ezW-hB-mtq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1346" y="1070"/>
+            <point key="canvasLocation" x="-1346.1538461538462" y="1069.9052132701422"/>
         </scene>
         <!--Feed-->
         <scene sceneID="Lqb-RS-kUT">
             <objects>
-                <viewController id="Hnp-K3-iG8" sceneMemberID="viewController">
+                <viewController id="Hnp-K3-iG8" customClass="FeedViewController" customModule="instaCloneFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7eN-84-Tqt">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,6 +149,7 @@
                             <constraint firstItem="Lm2-Cq-a7Z" firstAttribute="trailing" secondItem="NPM-aS-ZPl" secondAttribute="trailing" id="u2t-wM-UeO"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="uTc-yk-MCB"/>
                     <connections>
                         <outlet property="txtEmail" destination="Lm2-Cq-a7Z" id="d37-ks-jIH"/>
                         <outlet property="txtPassword" destination="NPM-aS-ZPl" id="dh1-IB-J8A"/>
