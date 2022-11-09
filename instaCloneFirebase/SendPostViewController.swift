@@ -7,23 +7,74 @@
 
 import UIKit
 
-class SendPostViewController: UIViewController {
-
+class SendPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @IBOutlet weak var SendButton: UIButton!
+    
+    @IBOutlet weak var txtComment: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var didImageSelected = false
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        imageView.isUserInteractionEnabled = true
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(CloseKeyboard))
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ImagePicker))
+        imageView.addGestureRecognizer(gestureRecognizer)
+        view.addGestureRecognizer(recognizer)
+    }
+    
+    @objc func ImagePicker(){
+        
+        if !didImageSelected{
+            let picker = UIImagePickerController()
+                        picker.delegate = self
+                        picker.sourceType = .photoLibrary
+                        picker.allowsEditing = true
+                        present(picker, animated:true, completion: nil)
+                        SendButton.isEnabled = true
+                        didImageSelected = true
+        }
+        
+                    
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let oldImage = info[.originalImage] as? UIImage
+        
+        imageView.image = resizeImageWithAspect(image: oldImage!, scaledToMaxWidth: 200, maxHeight: 200)
+        self.dismiss(animated: true)
+    }
+    
+    @objc func CloseKeyboard(){
+        
+        view.endEditing(true)
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func SendPostClicker(_ sender: Any) {
     }
-    */
+    
+    
+    func resizeImageWithAspect(image: UIImage,scaledToMaxWidth width:CGFloat,maxHeight height :CGFloat)->UIImage? {
+           let oldWidth = image.size.width;
+           let oldHeight = image.size.height;
 
+           let scaleFactor = (oldWidth > oldHeight) ? width / oldWidth : height / oldHeight;
+
+           let newHeight = oldHeight * scaleFactor;
+           let newWidth = oldWidth * scaleFactor;
+           let newSize = CGSize(width: newWidth, height: newHeight)
+
+           UIGraphicsBeginImageContextWithOptions(newSize,false,UIScreen.main.scale);
+
+           image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height));
+           let newImage = UIGraphicsGetImageFromCurrentImageContext();
+           UIGraphicsEndImageContext();
+           return newImage
+       }
+    
 }

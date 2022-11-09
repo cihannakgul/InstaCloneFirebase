@@ -16,17 +16,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        SessionControl()
+     
     }
     
-    func SessionControl(){
-        
-        let currentUser = Auth.auth().currentUser
-        if currentUser != nil{
-            performSegue(withIdentifier: "toFeedVC", sender: nil)
-        }
-    }
-    
+ 
     
     @IBAction func SignUpClicked(_ sender: Any) { // Kaydol
         if txtEmail.text != "" && txtPassword.text != ""{
