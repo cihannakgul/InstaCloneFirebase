@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SendPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var SendButton: UIButton!
@@ -56,6 +57,28 @@ class SendPostViewController: UIViewController, UIImagePickerControllerDelegate,
     
 
     @IBAction func SendPostClicker(_ sender: Any) {
+        let storage = Storage.storage()
+        let storageReference = storage.reference()
+        let mediaFolder = storageReference.child("media")
+        
+        if let data = imageView.image?.jpegData(compressionQuality: 0.5){
+            let imageReference = mediaFolder.child("image.jpg")
+            imageReference.putData(data, metadata: nil) { metadata, error in
+                if error != nil{
+                    print(error?.localizedDescription)
+                    
+                }
+                else{
+                    imageReference.downloadURL { url, error in
+                        if error == nil{
+                            let imageURL = url?.absoluteString
+                            print(imageURL)
+                        }
+                    }
+                }
+                
+            }
+        }
     }
     
     
