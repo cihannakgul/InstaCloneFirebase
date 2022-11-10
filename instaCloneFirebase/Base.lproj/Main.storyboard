@@ -106,10 +106,25 @@
                     <view key="view" contentMode="scaleToFill" id="7eN-84-Tqt">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9qp-8H-n7b">
+                                <rect key="frame" x="0.0" y="47" width="390" height="714"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Kae-rP-TN2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kae-rP-TN2" firstAttribute="bottom" secondItem="9qp-8H-n7b" secondAttribute="bottom" id="P6r-kI-B5m"/>
+                            <constraint firstItem="9qp-8H-n7b" firstAttribute="top" secondItem="Kae-rP-TN2" secondAttribute="top" id="e1W-XK-mSa"/>
+                            <constraint firstItem="9qp-8H-n7b" firstAttribute="leading" secondItem="Kae-rP-TN2" secondAttribute="leading" id="eP5-RY-605"/>
+                            <constraint firstItem="Kae-rP-TN2" firstAttribute="trailing" secondItem="9qp-8H-n7b" secondAttribute="trailing" id="jeU-t9-uzr"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="figure.wave.circle" catalog="system" id="wj1-Q4-5Vo"/>
+                    <connections>
+                        <outlet property="tableView" destination="9qp-8H-n7b" id="SNo-Db-fKc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCz-2g-qqV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
