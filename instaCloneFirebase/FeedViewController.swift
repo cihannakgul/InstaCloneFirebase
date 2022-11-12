@@ -33,7 +33,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.lblUsername.text = allPosts[indexPath.row].userEmail
         cell.lblLikes.text = String(allPosts[indexPath.row].like)
         cell.lblComment.text = allPosts[indexPath.row].userComment
-        cell.userImage.image = UIImage(systemName: "pencil")
+        cell.lblDocumentId.text = allPosts[indexPath.row].documentID
+        
+        cell.userImage.sd_setImage(with: URL(string: allPosts[indexPath.row].userImage))
+        cell.userImage.sd_setImage(with: URL(string: allPosts[indexPath.row].userImage), placeholderImage: nil, options: .highPriority) { image, error, type, url in
+            if error != nil{
+                cell.userImage.image = image
+            }
+        }
+    
         
         return cell
         
@@ -43,20 +51,22 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func getData(){
         let fireStoreDatabase = Firestore.firestore()
      //   let settings = fireStoreDatabase.settings
-        fireStoreDatabase.collection("Posts").addSnapshotListener { snapshot, error in
+        fireStoreDatabase.collection("Posts").order(by: "date", descending: true).addSnapshotListener { snapshot, error in
             if error != nil{
                 print(error?.localizedDescription)
                 
             }else{
                 if snapshot?.isEmpty != true && snapshot != nil{
+                    self.allPosts.removeAll()
                     for document in snapshot!.documents{
-                        
+                        let documentID = document.documentID
+
                        
                         if let username = document.get("postedBy") as? String{
                             if let userComment = document.get("postComment") as? String {
                                 if let imageUrl = document.get("imageUrl") as? String {
                                     if let likes = document.get("likes") as? Int {
-                                        let personWho = User(userEmail: username, userComment: userComment, userImage: imageUrl, like: likes)
+                                        let personWho = User(userEmail: username, userComment: userComment, userImage: imageUrl, like: likes, documentID: documentID)
                                         
                                         self.allPosts.append(personWho)
                                     }
@@ -72,7 +82,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                             
                             
                         }
-                        let documentID = document.documentID
                         print(documentID)
                         
                     }

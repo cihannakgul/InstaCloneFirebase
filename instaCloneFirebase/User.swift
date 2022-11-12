@@ -13,12 +13,14 @@ class User{
     var userComment : String!
     var userImage : String!
     var like : Int!
+    var documentID : String!
 
-    init( userEmail:String,  userComment:String, userImage : String, like: Int){
+    init( userEmail:String,  userComment:String, userImage : String, like: Int, documentID: String){
         self.userEmail = userEmail
         self.userComment = userComment
         self.userImage = userImage
         self.like = like
+        self.documentID = documentID
         
     }
 

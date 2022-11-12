@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseFirestore
 class FeedCell: UITableViewCell {
     
     
@@ -17,6 +18,9 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var lblComment: UILabel!
     
     @IBOutlet weak var lblLikes: UILabel!
+    
+    @IBOutlet weak var lblDocumentId: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -29,5 +33,6 @@ class FeedCell: UITableViewCell {
     }
 
     @IBAction func likeClicked(_ sender: Any) {
+        print("pressed \(lblDocumentId.text)")
     }
 }

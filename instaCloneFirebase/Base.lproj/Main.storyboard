@@ -139,29 +139,40 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhI-7c-AVh">
-                                                    <rect key="frame" x="30" y="326" width="65" height="35"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="65" id="bga-c7-vap"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Like"/>
-                                                    <connections>
-                                                        <action selector="likeClicked:" destination="Xbk-2l-aXQ" eventType="touchUpInside" id="JHp-HR-hdd"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcF-bY-gET">
                                                     <rect key="frame" x="292" y="333" width="12" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkQ-i7-LRe">
+                                                    <rect key="frame" x="307" y="19" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhI-7c-AVh">
+                                                    <rect key="frame" x="39" y="325" width="65" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="65" id="bga-c7-vap"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Like" cornerStyle="dynamic">
+                                                        <backgroundConfiguration key="background" cornerRadius="18"/>
+                                                        <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="likeClicked:" destination="Xbk-2l-aXQ" eventType="touchUpInside" id="JHp-HR-hdd"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="tQB-5g-RA8" firstAttribute="leading" secondItem="pyR-am-To2" secondAttribute="leadingMargin" constant="19" id="1Kl-9N-aYm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pkQ-i7-LRe" secondAttribute="trailing" constant="21" id="79a-Tg-U0O"/>
                                                 <constraint firstItem="tQB-5g-RA8" firstAttribute="top" secondItem="mVz-vQ-v1h" secondAttribute="bottom" constant="26" id="DkC-p1-me8"/>
                                                 <constraint firstItem="fRh-hP-BPf" firstAttribute="top" secondItem="tQB-5g-RA8" secondAttribute="bottom" constant="8" id="JgM-Xr-3nH"/>
                                                 <constraint firstItem="tQB-5g-RA8" firstAttribute="trailing" secondItem="fRh-hP-BPf" secondAttribute="trailing" id="KQ2-GA-dWw"/>
+                                                <constraint firstItem="mVz-vQ-v1h" firstAttribute="baseline" secondItem="pkQ-i7-LRe" secondAttribute="baseline" id="Nas-DK-o0l"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="PcF-bY-gET" secondAttribute="trailing" constant="66" id="RKZ-g6-Y5o"/>
                                                 <constraint firstItem="tQB-5g-RA8" firstAttribute="leading" secondItem="fRh-hP-BPf" secondAttribute="leading" id="Rt9-9f-k7x"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="DhI-7c-AVh" secondAttribute="bottom" constant="4" id="UcU-Vm-cNY"/>
@@ -174,6 +185,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblComment" destination="fRh-hP-BPf" id="uAh-q7-7cI"/>
+                                            <outlet property="lblDocumentId" destination="pkQ-i7-LRe" id="QQV-hn-bu9"/>
                                             <outlet property="lblLikes" destination="PcF-bY-gET" id="kgK-fh-F82"/>
                                             <outlet property="lblUsername" destination="mVz-vQ-v1h" id="d9X-ZX-87X"/>
                                             <outlet property="userImage" destination="tQB-5g-RA8" id="b3z-YZ-zdz"/>
@@ -293,6 +305,9 @@
         <image name="square.and.arrow.up.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
