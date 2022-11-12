@@ -33,6 +33,12 @@ class FeedCell: UITableViewCell {
     }
 
     @IBAction func likeClicked(_ sender: Any) {
-        print("pressed \(lblDocumentId.text)")
+       
+        let firestoreDatabase = Firestore.firestore()
+        if let likeCount = Int(lblLikes.text!){
+            let likeStore = ["likes" : likeCount+1] as [String : Any]
+            
+            firestoreDatabase.collection("Posts").document(lblDocumentId.text!).setData(likeStore, merge: true)
+        }
     }
 }
