@@ -10,6 +10,7 @@
 		8BF896EB7A0F5E09D0041E2D /* Pods_instaCloneFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A11C3EA7E8FAF750A737731 /* Pods_instaCloneFirebase.framework */; };
 		F0169D79291E708200D903BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0169D78291E708200D903BD /* User.swift */; };
 		F07B52DF291DBEBF00D0C127 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07B52DE291DBEBF00D0C127 /* FeedCell.swift */; };
+		F0A87A4B292281D7000B1A5C /* Instagram_logo.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A87A4A292281D7000B1A5C /* Instagram_logo.svg.png */; };
 		F0DB54ED291A6F0D00572143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB54EC291A6F0D00572143 /* AppDelegate.swift */; };
 		F0DB54EF291A6F0D00572143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB54EE291A6F0D00572143 /* SceneDelegate.swift */; };
 		F0DB54F1291A6F0D00572143 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB54F0291A6F0D00572143 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		138BAF2510F4AADE9AC46008 /* Pods-instaCloneFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaCloneFirebase.release.xcconfig"; path = "Target Support Files/Pods-instaCloneFirebase/Pods-instaCloneFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		F0169D78291E708200D903BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F07B52DE291DBEBF00D0C127 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		F0A87A4A292281D7000B1A5C /* Instagram_logo.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Instagram_logo.svg.png; sourceTree = "<group>"; };
 		F0DB54E9291A6F0D00572143 /* instaCloneFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaCloneFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DB54EC291A6F0D00572143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0DB54EE291A6F0D00572143 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				F0E24BA2291A9ADD00476E27 /* SendPostViewController.swift */,
 				F0DB54F2291A6F0D00572143 /* Main.storyboard */,
 				F0DB54F5291A6F1000572143 /* Assets.xcassets */,
+				F0A87A4A292281D7000B1A5C /* Instagram_logo.svg.png */,
 				F0DB54F7291A6F1000572143 /* LaunchScreen.storyboard */,
 				F0DB5500291A73E000572143 /* GoogleService-Info.plist */,
 				F0DB54FA291A6F1000572143 /* Info.plist */,
@@ -169,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A87A4B292281D7000B1A5C /* Instagram_logo.svg.png in Resources */,
 				F0DB54F9291A6F1000572143 /* LaunchScreen.storyboard in Resources */,
 				F0DB5501291A73E000572143 /* GoogleService-Info.plist in Resources */,
 				F0DB54F6291A6F1000572143 /* Assets.xcassets in Resources */,
