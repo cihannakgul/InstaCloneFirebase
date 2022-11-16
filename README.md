@@ -4,7 +4,8 @@
  ## <b> Libraries </b>  
    - Firebase Auth  
    - Firebase Firestore 
-   - SDWebImage  
+   - SDWebImage
+   - FirebaseAnalytics
  
  ## <b> Screenshots </b>
 
