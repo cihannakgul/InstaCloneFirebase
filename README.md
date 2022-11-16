@@ -1,5 +1,7 @@
 # InstaCloneFirebase
-<b> Insta clone with Firebase Backend </b>
+<b> Insta clone with Firebase Backend.
+GoogleService-Info.plist file must be added to run project.
+</b>
 
  ## <b> Libraries </b>  
    - Firebase Auth  
